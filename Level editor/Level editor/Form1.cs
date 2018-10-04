@@ -116,8 +116,8 @@ namespace Level_editor
             if (roomView.FocusedItem != null)
             {
                 UpdateView(ref itemView, currentFloor.myRooms[roomView.FocusedItem.Text].items.Keys.Select(x => new ListViewItem(x)).ToArray());
-                UpdateView(ref characterView, currentFloor.myRooms[roomView.SelectedItems[0].Text].characters.Keys.Select(x => new ListViewItem(x)).ToArray());
-                UpdateView(ref doorView, currentFloor.myRooms[roomView.SelectedItems[0].Text].doors.Keys.Select(x => new ListViewItem(x)).ToArray());
+                UpdateView(ref characterView, currentFloor.myRooms[roomView.FocusedItem.Text].characters.Keys.Select(x => new ListViewItem(x)).ToArray());
+                UpdateView(ref doorView, currentFloor.myRooms[roomView.FocusedItem.Text].doors.Keys.Select(x => new ListViewItem(x)).ToArray());
             }
         }
     }
