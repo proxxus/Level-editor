@@ -38,7 +38,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.doorView = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAddFloor = new System.Windows.Forms.Button();
+            this.btnAddRoom = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnAddCharacter = new System.Windows.Forms.Button();
+            this.btnAddDoor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // floorView
@@ -145,19 +149,66 @@
             this.doorView.UseCompatibleStateImageBehavior = false;
             this.doorView.View = System.Windows.Forms.View.List;
             // 
-            // textBox1
+            // btnAddFloor
             // 
-            this.textBox1.Location = new System.Drawing.Point(690, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 20);
-            this.textBox1.TabIndex = 11;
+            this.btnAddFloor.Location = new System.Drawing.Point(353, 98);
+            this.btnAddFloor.Name = "btnAddFloor";
+            this.btnAddFloor.Size = new System.Drawing.Size(75, 23);
+            this.btnAddFloor.TabIndex = 12;
+            this.btnAddFloor.Text = "Add Floor";
+            this.btnAddFloor.UseVisualStyleBackColor = true;
+            this.btnAddFloor.Click += new System.EventHandler(this.btnAddFloor_Click);
+            // 
+            // btnAddRoom
+            // 
+            this.btnAddRoom.Location = new System.Drawing.Point(353, 319);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Size = new System.Drawing.Size(75, 23);
+            this.btnAddRoom.TabIndex = 13;
+            this.btnAddRoom.Text = "Add Room";
+            this.btnAddRoom.UseVisualStyleBackColor = true;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
+            // 
+            // btnAddItem
+            // 
+            this.btnAddItem.Location = new System.Drawing.Point(159, 701);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(75, 23);
+            this.btnAddItem.TabIndex = 14;
+            this.btnAddItem.Text = "Add Item";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // btnAddCharacter
+            // 
+            this.btnAddCharacter.Location = new System.Drawing.Point(541, 701);
+            this.btnAddCharacter.Name = "btnAddCharacter";
+            this.btnAddCharacter.Size = new System.Drawing.Size(93, 23);
+            this.btnAddCharacter.TabIndex = 15;
+            this.btnAddCharacter.Text = "Add Character";
+            this.btnAddCharacter.UseVisualStyleBackColor = true;
+            this.btnAddCharacter.Click += new System.EventHandler(this.btnAddCharacter_Click);
+            // 
+            // btnAddDoor
+            // 
+            this.btnAddDoor.Location = new System.Drawing.Point(944, 701);
+            this.btnAddDoor.Name = "btnAddDoor";
+            this.btnAddDoor.Size = new System.Drawing.Size(75, 23);
+            this.btnAddDoor.TabIndex = 16;
+            this.btnAddDoor.Text = "Add Door";
+            this.btnAddDoor.UseVisualStyleBackColor = true;
+            this.btnAddDoor.Click += new System.EventHandler(this.btnAddDoor_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 800);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1225, 800);
+            this.Controls.Add(this.btnAddDoor);
+            this.Controls.Add(this.btnAddCharacter);
+            this.Controls.Add(this.btnAddItem);
+            this.Controls.Add(this.btnAddRoom);
+            this.Controls.Add(this.btnAddFloor);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.doorView);
             this.Controls.Add(this.label4);
@@ -188,7 +239,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAddFloor;
+        private System.Windows.Forms.Button btnAddRoom;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.Button btnAddCharacter;
+        private System.Windows.Forms.Button btnAddDoor;
     }
 }
 

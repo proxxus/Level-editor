@@ -11,13 +11,20 @@ namespace Level_editor
         Dictionary<string, Floor> floorDictionary = new Dictionary<string, Floor>();
         Floor currentFloor = new Floor();
 
+        #region Properties
+        public Dictionary<string, Floor> FloorDictionary { get => floorDictionary; set => floorDictionary = value; }
+        public Dictionary<string, Item> CurrentItems { get => (roomView.FocusedItem != null) ? currentFloor.myRooms[roomView.FocusedItem.Text].items : null; set => currentFloor.myRooms[roomView.FocusedItem.Text].items = value; }
+        public Floor CurrentFloor { get; }
+        public ListView RoomView{ get; set; }
+        #endregion
+
         public Form1()
         {
             InitializeComponent();
         }
 
         #region Structs and Classes
-        struct Item
+        public struct Item
         {
             Item(int anXValue, int aYValue, Bitmap anImage)
             {
@@ -30,18 +37,18 @@ namespace Level_editor
             public readonly Bitmap myImage;
         };
 
-        struct Character
+        public struct Character
         {
             public Bitmap MyCharacterImage { get; set; }
         };
 
-        struct Door
+        public struct Door
         {
             // I have no idea of how to define it, but I know we need some form of "Room-link" to define where a door leads to
             public int myX, myY;
         }
 
-        class Room
+        public class Room
         {
             public Dictionary<string, Item> items = new Dictionary<string, Item>();
             public Dictionary<string, Character> characters = new Dictionary<string, Character>();
@@ -50,7 +57,7 @@ namespace Level_editor
             public Bitmap MyBackground { get; set; }
         };
 
-        class Floor
+        public class Floor
         {
             public Dictionary<string, Room> myRooms = new Dictionary<string, Room>();
         };
@@ -77,7 +84,6 @@ namespace Level_editor
             if (floorView.FocusedItem != null)
             {
                 floorDictionary.TryGetValue(floorView.FocusedItem.Text, out currentFloor);
-                textBox1.Text = floorView.FocusedItem.Text;
                 ClearViews();
                 UpdateView(ref roomView, currentFloor.myRooms.Keys.Select(x => new ListViewItem(x)).ToArray());
             }
@@ -85,30 +91,7 @@ namespace Level_editor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<ListViewItem> listedFloors = new List<ListViewItem>();
 
-            for (int index = 0; index < 3; index++)
-            {
-                listedFloors.Add(new ListViewItem("Floor " + (index + 1)));
-                floorDictionary.Add("Floor " + (index + 1), new Floor());
-            }
-
-            for (int index = 0; index < 2; index++)
-            {
-                floorDictionary["Floor 1"].myRooms.Add("Room " + (index + 1), new Room());
-            }
-
-            for (int index = 0; index < 3; index++)
-            {
-                floorDictionary["Floor 1"].myRooms["Room 1"].items.Add("Item " + (index + 1), new Item());
-                floorDictionary["Floor 1"].myRooms["Room 1"].characters.Add("Character " + (index + 1), new Character());
-                floorDictionary["Floor 1"].myRooms["Room 1"].doors.Add("Door " + (index + 1), new Door());
-            }
-
-            floorView.Items.AddRange(listedFloors.ToArray());
-            floorView.Update();
-
-            listedFloors.Clear();
         }
 
         private void roomView_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,6 +102,32 @@ namespace Level_editor
                 UpdateView(ref characterView, currentFloor.myRooms[roomView.FocusedItem.Text].characters.Keys.Select(x => new ListViewItem(x)).ToArray());
                 UpdateView(ref doorView, currentFloor.myRooms[roomView.FocusedItem.Text].doors.Keys.Select(x => new ListViewItem(x)).ToArray());
             }
+        }
+
+        private void btnAddFloor_Click(object sender, EventArgs e)
+        {
+            NewMemberDialog createItem = new NewMemberDialog(this, "Item");
+            createItem.Show();
+        }
+
+        private void btnAddRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddCharacter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddDoor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

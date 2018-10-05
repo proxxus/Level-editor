@@ -9,14 +9,3 @@ C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level editor.
 C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level editor.pdb
 C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level_editor.Form1.resources
 C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level_editor.NewMemberDialog.resources
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\bin\Debug\Level editor.exe.config
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\bin\Debug\Level editor.exe
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\bin\Debug\Level editor.pdb
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\obj\Debug\Level editor.csprojResolveAssemblyReference.cache
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\obj\Debug\Level_editor.Form1.resources
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\obj\Debug\Level_editor.NewMemberDialog.resources
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\obj\Debug\Level_editor.Properties.Resources.resources
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\obj\Debug\Level editor.csproj.GenerateResource.Cache
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\obj\Debug\Level editor.csproj.CoreCompileInputs.cache
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\obj\Debug\Level editor.exe
-C:\Users\Administratör.R9Z459A\Level-editor\Level editor\Level editor\obj\Debug\Level editor.pdb

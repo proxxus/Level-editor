@@ -12,14 +12,19 @@ namespace Level_editor
 {
     public partial class NewMemberDialog : System.Windows.Forms.Form
     {
-        public NewMemberDialog()
+        Form1 parent;
+        string typeToAdd;
+
+        public NewMemberDialog(Form1 aParent, string aTypeToAdd)
         {
+            parent = aParent;
+            typeToAdd = aTypeToAdd;
             InitializeComponent();
         }
 
         private void NewMemberDialog_Load(object sender, EventArgs e)
         {
-
+            parent.FloorDictionary.Add("Simple Floor", new Form1.Floor());
         }
     }
 }
