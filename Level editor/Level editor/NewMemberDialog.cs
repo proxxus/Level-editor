@@ -13,9 +13,9 @@ namespace Level_editor
     public partial class NewMemberDialog : System.Windows.Forms.Form
     {
         Form1 parent;
-        string typeToAdd;
+        ObjectType typeToAdd;
 
-        public NewMemberDialog(Form1 aParent, string aTypeToAdd)
+        public NewMemberDialog(Form1 aParent, ObjectType aTypeToAdd)
         {
             parent = aParent;
             typeToAdd = aTypeToAdd;
@@ -24,7 +24,51 @@ namespace Level_editor
 
         private void NewMemberDialog_Load(object sender, EventArgs e)
         {
-            parent.FloorDictionary.Add("Simple Floor", new Form1.Floor());
+            switch (typeToAdd)
+            {
+                case ObjectType.Floor:
+                    FloorForm();
+                    break;
+                case ObjectType.Room:
+                    RoomForm();
+                    break;
+                case ObjectType.Item:
+                    ItemForm();
+                    break;
+                case ObjectType.Character:
+                    CharacterForm();
+                    break;
+                case ObjectType.Doors:
+                    DoorForm();
+                    break;
+                default:
+                    throw new NullReferenceException();
+            }
+        }
+
+        private void FloorForm()
+        {
+            
+        }
+
+        private void RoomForm()
+        {
+
+        }
+
+        private void ItemForm()
+        {
+
+        }
+
+        private void CharacterForm()
+        {
+
+        }
+
+        private void DoorForm()
+        {
+
         }
     }
 }

@@ -6,16 +6,23 @@ using System.Linq;
 
 namespace Level_editor
 {
+    public enum ObjectType
+    {
+        Floor,
+        Room,
+        Item,
+        Character,
+        Doors
+    };
+
     public partial class Form1 : System.Windows.Forms.Form
     {
-        Dictionary<string, Floor> floorDictionary = new Dictionary<string, Floor>();
         Floor currentFloor = new Floor();
 
         #region Properties
-        public Dictionary<string, Floor> FloorDictionary { get => floorDictionary; set => floorDictionary = value; }
+        public Dictionary<string, Floor> FloorDictionary { get; set; } = new Dictionary<string, Floor>();
         public Dictionary<string, Item> CurrentItems { get => (roomView.FocusedItem != null) ? currentFloor.myRooms[roomView.FocusedItem.Text].items : null; set => currentFloor.myRooms[roomView.FocusedItem.Text].items = value; }
-        public Floor CurrentFloor { get; }
-        public ListView RoomView{ get; set; }
+        public Floor CurrentFloor { get => currentFloor; }
         #endregion
 
         public Form1()
@@ -34,7 +41,7 @@ namespace Level_editor
             }
 
             public int myX, myY;
-            public readonly Bitmap myImage;
+            public Bitmap myImage;
         };
 
         public struct Character
@@ -83,7 +90,7 @@ namespace Level_editor
         {
             if (floorView.FocusedItem != null)
             {
-                floorDictionary.TryGetValue(floorView.FocusedItem.Text, out currentFloor);
+                FloorDictionary.TryGetValue(floorView.FocusedItem.Text, out currentFloor);
                 ClearViews();
                 UpdateView(ref roomView, currentFloor.myRooms.Keys.Select(x => new ListViewItem(x)).ToArray());
             }
@@ -106,7 +113,7 @@ namespace Level_editor
 
         private void btnAddFloor_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, "Item");
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Item);
             createItem.Show();
         }
 
