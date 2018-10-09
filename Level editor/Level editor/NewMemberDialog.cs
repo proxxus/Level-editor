@@ -27,48 +27,76 @@ namespace Level_editor
             switch (typeToAdd)
             {
                 case ObjectType.Floor:
-                    FloorForm();
+                    ShowFloorForm();
                     break;
                 case ObjectType.Room:
-                    RoomForm();
+                    ShowRoomForm();
                     break;
                 case ObjectType.Item:
-                    ItemForm();
+                    ShowItemForm();
                     break;
                 case ObjectType.Character:
-                    CharacterForm();
+                    ShowCharacterForm();
                     break;
                 case ObjectType.Doors:
-                    DoorForm();
+                    ShowDoorForm();
                     break;
                 default:
                     throw new NullReferenceException();
             }
         }
 
-        private void FloorForm()
+        private void ShowFloorForm()
         {
-            
+            this.Text = "Add New Floor";
+            label6.Location = new Point((this.Width/2) - (label6.Width/2));
+            label6.Show();
+            label6.Text = "Name of Floor";
+            textBox1.Show();
         }
 
-        private void RoomForm()
+        private void ShowRoomForm()
+        {
+        }
+
+        private void ShowItemForm()
         {
 
         }
 
-        private void ItemForm()
+        private void ShowCharacterForm()
         {
 
         }
 
-        private void CharacterForm()
+        private void ShowDoorForm()
         {
 
         }
 
-        private void DoorForm()
+        private void btnAddMember_Click(object sender, EventArgs e)
         {
+            switch (typeToAdd)
+            {
+                case ObjectType.Floor:
+                     
+                    break;
+                case ObjectType.Room:
+                    break;
+                case ObjectType.Item:
+                    break;
+                case ObjectType.Character:
+                    break;
+                case ObjectType.Doors:
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

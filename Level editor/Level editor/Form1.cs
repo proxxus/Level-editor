@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace Level_editor
 {
+    // Reffering to level editor objects
     public enum ObjectType
     {
         Floor,
@@ -17,6 +18,7 @@ namespace Level_editor
 
     public partial class Form1 : System.Windows.Forms.Form
     {
+        // Keeps track of our last marked floor and it's rooms, and their items, characters and doors.
         Floor currentFloor = new Floor();
 
         #region Properties
@@ -33,14 +35,16 @@ namespace Level_editor
         #region Structs and Classes
         public struct Item
         {
-            Item(int anXValue, int aYValue, Bitmap anImage)
+            Item(int anXValue, int aYValue, int aWidth, int aHeight, Bitmap anImage)
             {
                 myX = anXValue;
                 myY = aYValue;
+                myWidth = aWidth;
+                myHeight = aHeight;
                 myImage = anImage;
             }
 
-            public int myX, myY;
+            public int myX, myY, myWidth, myHeight;
             public Bitmap myImage;
         };
 
@@ -113,28 +117,32 @@ namespace Level_editor
 
         private void btnAddFloor_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Item);
-            createItem.Show();
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            createItem.ShowDialog(this);
         }
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            createItem.ShowDialog(this);
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            createItem.ShowDialog(this);
         }
 
         private void btnAddCharacter_Click(object sender, EventArgs e)
         {
-
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            createItem.ShowDialog(this);
         }
 
         private void btnAddDoor_Click(object sender, EventArgs e)
         {
-
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            createItem.ShowDialog(this);
         }
     }
 }

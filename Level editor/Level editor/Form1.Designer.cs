@@ -50,7 +50,7 @@
             this.floorView.BackColor = System.Drawing.Color.White;
             this.floorView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.floorView.HideSelection = false;
-            this.floorView.Location = new System.Drawing.Point(61, 24);
+            this.floorView.Location = new System.Drawing.Point(452, 12);
             this.floorView.MultiSelect = false;
             this.floorView.Name = "floorView";
             this.floorView.Size = new System.Drawing.Size(286, 184);
@@ -62,7 +62,7 @@
             // roomView
             // 
             this.roomView.HideSelection = false;
-            this.roomView.Location = new System.Drawing.Point(61, 245);
+            this.roomView.Location = new System.Drawing.Point(452, 270);
             this.roomView.MultiSelect = false;
             this.roomView.Name = "roomView";
             this.roomView.Size = new System.Drawing.Size(286, 184);
@@ -74,7 +74,7 @@
             // itemView
             // 
             this.itemView.HideSelection = false;
-            this.itemView.Location = new System.Drawing.Point(61, 511);
+            this.itemView.Location = new System.Drawing.Point(61, 609);
             this.itemView.MultiSelect = false;
             this.itemView.Name = "itemView";
             this.itemView.Size = new System.Drawing.Size(286, 184);
@@ -85,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 108);
+            this.label1.Location = new System.Drawing.Point(406, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 4;
@@ -94,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 479);
+            this.label2.Location = new System.Drawing.Point(176, 577);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
@@ -103,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(559, 479);
+            this.label3.Location = new System.Drawing.Point(565, 577);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 6;
@@ -112,7 +112,7 @@
             // characterView
             // 
             this.characterView.HideSelection = false;
-            this.characterView.Location = new System.Drawing.Point(452, 511);
+            this.characterView.Location = new System.Drawing.Point(452, 609);
             this.characterView.MultiSelect = false;
             this.characterView.Name = "characterView";
             this.characterView.Size = new System.Drawing.Size(286, 184);
@@ -123,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 329);
+            this.label4.Location = new System.Drawing.Point(406, 354);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 8;
@@ -132,7 +132,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(961, 479);
+            this.label5.Location = new System.Drawing.Point(961, 577);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 10;
@@ -141,7 +141,7 @@
             // doorView
             // 
             this.doorView.HideSelection = false;
-            this.doorView.Location = new System.Drawing.Point(843, 511);
+            this.doorView.Location = new System.Drawing.Point(843, 609);
             this.doorView.MultiSelect = false;
             this.doorView.Name = "doorView";
             this.doorView.Size = new System.Drawing.Size(286, 184);
@@ -151,7 +151,7 @@
             // 
             // btnAddFloor
             // 
-            this.btnAddFloor.Location = new System.Drawing.Point(353, 98);
+            this.btnAddFloor.Location = new System.Drawing.Point(559, 202);
             this.btnAddFloor.Name = "btnAddFloor";
             this.btnAddFloor.Size = new System.Drawing.Size(75, 23);
             this.btnAddFloor.TabIndex = 12;
@@ -161,7 +161,7 @@
             // 
             // btnAddRoom
             // 
-            this.btnAddRoom.Location = new System.Drawing.Point(353, 319);
+            this.btnAddRoom.Location = new System.Drawing.Point(559, 460);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(75, 23);
             this.btnAddRoom.TabIndex = 13;
@@ -171,7 +171,7 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(159, 701);
+            this.btnAddItem.Location = new System.Drawing.Point(159, 799);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(75, 23);
             this.btnAddItem.TabIndex = 14;
@@ -181,7 +181,7 @@
             // 
             // btnAddCharacter
             // 
-            this.btnAddCharacter.Location = new System.Drawing.Point(541, 701);
+            this.btnAddCharacter.Location = new System.Drawing.Point(550, 799);
             this.btnAddCharacter.Name = "btnAddCharacter";
             this.btnAddCharacter.Size = new System.Drawing.Size(93, 23);
             this.btnAddCharacter.TabIndex = 15;
@@ -191,7 +191,7 @@
             // 
             // btnAddDoor
             // 
-            this.btnAddDoor.Location = new System.Drawing.Point(944, 701);
+            this.btnAddDoor.Location = new System.Drawing.Point(946, 799);
             this.btnAddDoor.Name = "btnAddDoor";
             this.btnAddDoor.Size = new System.Drawing.Size(75, 23);
             this.btnAddDoor.TabIndex = 16;
@@ -203,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1225, 800);
+            this.ClientSize = new System.Drawing.Size(1225, 857);
             this.Controls.Add(this.btnAddDoor);
             this.Controls.Add(this.btnAddCharacter);
             this.Controls.Add(this.btnAddItem);
