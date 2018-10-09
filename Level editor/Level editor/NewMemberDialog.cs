@@ -49,7 +49,7 @@ namespace Level_editor
         private void ShowFloorForm()
         {
             this.Text = "Add New Floor";
-            label6.Location = new Point((this.Width/2) - (label6.Width/2));
+            label6.Location = new Point((this.Width / 2) - (label6.Width / 2));
             label6.Show();
             label6.Text = "Name of Floor";
             textBox1.Show();
@@ -79,7 +79,18 @@ namespace Level_editor
             switch (typeToAdd)
             {
                 case ObjectType.Floor:
-                     
+                    if (((!String.IsNullOrWhiteSpace(label6.Text)) && textBox1.Text.Count() > 3) && !parent.FloorDictionary.Keys.Contains(textBox1.Text))
+                    {
+                        label6.ForeColor = Color.Black;
+                        parent.FloorDictionary.Add(textBox1.Text, new Form1.Floor());
+                        parent.UpdateView(parent);
+                        this.Close();
+                    }
+                    else
+                    {
+                        label6.ForeColor = Color.Red;
+                        MessageBox.Show("Name must be 4 or more letters and can't have the same name as another floor");
+                    }
                     break;
                 case ObjectType.Room:
                     break;

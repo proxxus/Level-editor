@@ -25,6 +25,10 @@ namespace Level_editor
         public Dictionary<string, Floor> FloorDictionary { get; set; } = new Dictionary<string, Floor>();
         public Dictionary<string, Item> CurrentItems { get => (roomView.FocusedItem != null) ? currentFloor.myRooms[roomView.FocusedItem.Text].items : null; set => currentFloor.myRooms[roomView.FocusedItem.Text].items = value; }
         public Floor CurrentFloor { get => currentFloor; }
+        public ListView FloorView { get; set; }
+        public ListView FloorView { get; set; }
+        public ListView FloorView { get; set; }
+
         #endregion
 
         public Form1()
