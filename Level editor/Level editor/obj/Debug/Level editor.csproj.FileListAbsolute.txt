@@ -9,3 +9,4 @@ C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level editor.
 C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level editor.pdb
 C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level_editor.Form1.resources
 C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level_editor.NewMemberDialog.resources
+C:\Users\elias.oh\source\repos\Level editor\Level editor\obj\Debug\Level_editor.GetDimensions.resources

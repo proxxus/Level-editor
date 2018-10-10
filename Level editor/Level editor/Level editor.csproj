@@ -51,6 +51,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetDimensions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetDimensions.Designer.cs">
+      <DependentUpon>GetDimensions.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewMemberDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetDimensions.resx">
+      <DependentUpon>GetDimensions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewMemberDialog.resx">
       <DependentUpon>NewMemberDialog.cs</DependentUpon>

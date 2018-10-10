@@ -19,11 +19,14 @@ namespace Level_editor
     public partial class Form1 : System.Windows.Forms.Form
     {
         // Keeps track of our last marked floor and it's rooms, and their items, characters and doors.
-        Floor currentFloor = new Floor();
+        Floor currentFloor = null;
 
         #region Properties
         public Dictionary<string, Floor> FloorDictionary { get; set; } = new Dictionary<string, Floor>();
+        public Dictionary<string, Room> CurrentRooms { get => (floorView.FocusedItem != null) ? currentFloor.myRooms : null; set => currentFloor.myRooms = value; }
         public Dictionary<string, Item> CurrentItems { get => (roomView.FocusedItem != null) ? currentFloor.myRooms[roomView.FocusedItem.Text].items : null; set => currentFloor.myRooms[roomView.FocusedItem.Text].items = value; }
+        public Dictionary<string, Character> CurrentCharacters { get => (roomView.FocusedItem != null) ? currentFloor.myRooms[roomView.FocusedItem.Text].characters : null; set => currentFloor.myRooms[roomView.FocusedItem.Text].characters = value; }
+        public Dictionary<string, Door> CurrentDoors { get => (roomView.FocusedItem != null) ? currentFloor.myRooms[roomView.FocusedItem.Text].doors : null; set => currentFloor.myRooms[roomView.FocusedItem.Text].doors = value; }
         public Floor CurrentFloor { get => currentFloor; }
         #endregion
 
@@ -33,7 +36,7 @@ namespace Level_editor
         }
 
         #region Structs and Classes
-        public struct Item
+        public class Item
         {
             Item(int anXValue, int aYValue, int aWidth, int aHeight, Bitmap anImage)
             {
@@ -83,9 +86,23 @@ namespace Level_editor
             doorView.Clear();
         }
 
-        public ref ListView GetView()
+        public ref ListView GetView(ObjectType aTypeToGet)
         {
-            return ref floorView;
+            switch (aTypeToGet)
+            {
+                case ObjectType.Floor:
+                    return ref floorView;
+                case ObjectType.Room:
+                    return ref roomView;
+                case ObjectType.Item:
+                    return ref itemView;
+                case ObjectType.Character:
+                    return ref characterView;
+                case ObjectType.Door:
+                    return ref doorView;
+                default:
+                    throw new NullReferenceException();
+            }
         }
 
         public void UpdateView(ref ListView aListView, ListViewItem[] aListOfItems)
@@ -101,13 +118,12 @@ namespace Level_editor
             {
                 FloorDictionary.TryGetValue(floorView.FocusedItem.Text, out currentFloor);
                 ClearViews();
-                UpdateView(ref roomView, currentFloor.myRooms.Keys.Select(x => new ListViewItem(x)).ToArray());
+                UpdateView(ref roomView, CurrentFloor.myRooms.Keys.Select(x => new ListViewItem(x)).ToArray());
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            else
+            {
+                currentFloor = null;
+            }
         }
 
         private void roomView_SelectedIndexChanged(object sender, EventArgs e)
@@ -120,6 +136,11 @@ namespace Level_editor
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAddFloor_Click(object sender, EventArgs e)
         {
             NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
@@ -128,26 +149,42 @@ namespace Level_editor
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Room);
-            createItem.ShowDialog(this);
+            if (currentFloor != null)
+            {
+                NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Room);
+                createItem.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Must select a floor to add a room!");
+            }
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Item);
-            createItem.ShowDialog(this);
+            if (CurrentRooms != null)
+            {
+                NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Item);
+                createItem.ShowDialog(this);
+            }
         }
 
         private void btnAddCharacter_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Character);
-            createItem.ShowDialog(this);
+            if (CurrentItems != null)
+            {
+                NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Character);
+                createItem.ShowDialog(this);
+            }
         }
 
         private void btnAddDoor_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Door);
-            createItem.ShowDialog(this);
+            if (CurrentDoors != null)
+            {
+                NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Door);
+                createItem.ShowDialog(this);
+            }
         }
     }
 }

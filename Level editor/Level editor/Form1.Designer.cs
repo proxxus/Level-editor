@@ -219,6 +219,8 @@
             this.Controls.Add(this.itemView);
             this.Controls.Add(this.roomView);
             this.Controls.Add(this.floorView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Level editor";
             this.Load += new System.EventHandler(this.Form1_Load);
