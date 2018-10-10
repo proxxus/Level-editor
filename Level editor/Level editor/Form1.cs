@@ -13,7 +13,7 @@ namespace Level_editor
         Room,
         Item,
         Character,
-        Doors
+        Door
     };
 
     public partial class Form1 : System.Windows.Forms.Form
@@ -25,10 +25,6 @@ namespace Level_editor
         public Dictionary<string, Floor> FloorDictionary { get; set; } = new Dictionary<string, Floor>();
         public Dictionary<string, Item> CurrentItems { get => (roomView.FocusedItem != null) ? currentFloor.myRooms[roomView.FocusedItem.Text].items : null; set => currentFloor.myRooms[roomView.FocusedItem.Text].items = value; }
         public Floor CurrentFloor { get => currentFloor; }
-        public ListView FloorView { get; set; }
-        public ListView FloorView { get; set; }
-        public ListView FloorView { get; set; }
-
         #endregion
 
         public Form1()
@@ -59,7 +55,7 @@ namespace Level_editor
 
         public struct Door
         {
-            // I have no idea of how to define it, but I know we need some form of "Room-link" to define where a door leads to
+            string leadTo;
             public int myX, myY;
         }
 
@@ -85,6 +81,11 @@ namespace Level_editor
             itemView.Clear();
             characterView.Clear();
             doorView.Clear();
+        }
+
+        public ref ListView GetView()
+        {
+            return ref floorView;
         }
 
         public void UpdateView(ref ListView aListView, ListViewItem[] aListOfItems)
@@ -127,25 +128,25 @@ namespace Level_editor
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Room);
             createItem.ShowDialog(this);
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Item);
             createItem.ShowDialog(this);
         }
 
         private void btnAddCharacter_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Character);
             createItem.ShowDialog(this);
         }
 
         private void btnAddDoor_Click(object sender, EventArgs e)
         {
-            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Floor);
+            NewMemberDialog createItem = new NewMemberDialog(this, ObjectType.Door);
             createItem.ShowDialog(this);
         }
     }
